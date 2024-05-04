@@ -1,0 +1,26 @@
+# fibonacci.py
+def generate_fibonacci(n):
+    """
+    Generates the first 'n' numbers in the Fibonacci sequence.
+    """
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        next_num = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_num)
+    return fib_sequence
+
+def main():
+    try:
+        n = int(input("Enter the number of Fibonacci numbers to generate: "))
+        if n <= 0:
+            print("Please enter a positive integer.")
+            return
+
+        fibonacci_numbers = generate_fibonacci(n)
+        print(f"Fibonacci sequence (first {n} numbers): {fibonacci_numbers}")
+
+    except ValueError:
+        print("Invalid input. Please enter a positive integer.")
+
+if __name__ == "__main__":
+    main()
